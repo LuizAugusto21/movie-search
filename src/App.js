@@ -23,7 +23,7 @@ const App = () => {
         setMovies(data.Search);
     }
 
-    const [theme, setTheme] = useState("dark");
+    const [theme, setTheme] = useState("light");
     const toggleTheme = () => {
         setTheme((curr) => (curr === "light" ? "dark" : "light"));
     }
@@ -33,9 +33,9 @@ const App = () => {
         <div className="app" id={theme}>
 
             <div className="switch">
-                <ReactSwitch></ReactSwitch>
-                </div>
-
+                <ReactSwitch className='switch' onChange={toggleTheme} checked ={theme === "dark"}></ReactSwitch>
+            </div>
+            
             <h1>MovieSearch</h1>
 
             <div className="search">
